@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
@@ -31,7 +32,8 @@ val BackgroundGray = Color(0xFFF5F5F5)
 @Composable
 fun DashboardScreen(
     viewModel: DashboardViewModel,
-    onLogout: () -> Unit
+    onLogout: () -> Unit,
+    onNavigateToLocation: () -> Unit
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
@@ -61,13 +63,18 @@ fun DashboardScreen(
                             fontSize = 18.sp
                         )
                     }
-                    IconButton(onClick = { /* Handle notifications */ }) {
-                        BadgedBox(badge = {
-                            if (uiState is DashboardUiState.Success && (uiState as DashboardUiState.Success).data.notificationsCount > 0) {
-                                Badge { Text((uiState as DashboardUiState.Success).data.notificationsCount.toString()) }
+                    Row {
+                        IconButton(onClick = onNavigateToLocation) {
+                            Icon(Icons.Default.LocationOn, contentDescription = "Location", tint = Color.White)
+                        }
+                        IconButton(onClick = { /* Handle notifications */ }) {
+                            BadgedBox(badge = {
+                                if (uiState is DashboardUiState.Success && (uiState as DashboardUiState.Success).data.notificationsCount > 0) {
+                                    Badge { Text((uiState as DashboardUiState.Success).data.notificationsCount.toString()) }
+                                }
+                            }) {
+                                Icon(Icons.Default.Notifications, contentDescription = "Notifications", tint = Color.White)
                             }
-                        }) {
-                            Icon(Icons.Default.Notifications, contentDescription = "Notifications", tint = Color.White)
                         }
                     }
                 }

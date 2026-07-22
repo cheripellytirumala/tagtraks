@@ -6,19 +6,14 @@ plugins {
     alias(libs.plugins.androidMultiplatformLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    kotlin("native.cocoapods")
 }
 
 kotlin {
-    listOf(
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach { iosTarget ->
-        iosTarget.binaries.framework {
-            baseName = "Shared"
-            isStatic = true
-        }
-    }
-    
+    iosArm64()
+    iosSimulatorArm64()
+    // iosX64()
+
     jvm()
     
     js {
@@ -30,6 +25,27 @@ kotlin {
         browser()
     }
     
+    cocoapods {
+        name = "Shared"
+        version = "1.0"
+        summary = "Shared module for AppartmentApp"
+        homepage = "https://github.com/example/AppartmentApp"
+        ios.deploymentTarget = "15.0"
+        framework {
+            baseName = "Shared"
+            isStatic = true
+            export(projects.core)
+        }
+        pod("GoogleMaps") {
+            version = "9.2.0"
+            extraOpts += listOf("-compiler-option", "-fmodules", "-linker-option", "-ObjC")
+        }
+        pod("GooglePlaces") {
+            version = "9.2.0"
+            extraOpts += listOf("-compiler-option", "-fmodules", "-linker-option", "-ObjC")
+        }
+    }
+
     androidLibrary {
        namespace = "com.example.appartmentapp.app.shared"
        compileSdk = libs.versions.android.compileSdk.get().toInt()
@@ -48,20 +64,25 @@ kotlin {
     
     sourceSets {
         androidMain.dependencies {
-            implementation(libs.compose.uiToolingPreview)
+            implementation(libs.compose.ui.tooling.preview)
+            implementation(libs.google.maps)
+            implementation(libs.google.maps.compose)
+            implementation(libs.play.services.location)
+            implementation(libs.kotlinx.coroutines.play.services)
         }
         commonMain.dependencies {
             api(projects.core)
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.material)
-            implementation(compose.material3)
-            implementation(compose.ui)
-            implementation(compose.components.resources)
-            implementation(compose.components.uiToolingPreview)
-            implementation(compose.materialIconsExtended)
+            implementation(libs.compose.runtime)
+            implementation(libs.compose.foundation)
+            implementation(libs.compose.material)
+            implementation(libs.compose.material3)
+            implementation(libs.compose.ui)
+            implementation(libs.compose.components.resources)
+            implementation(libs.compose.ui.tooling.preview)
+            implementation(libs.compose.materialIconsExtended)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation(libs.kotlinx.coroutines.core)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -73,5 +94,5 @@ kotlin {
 }
 
 dependencies {
-    androidRuntimeClasspath(libs.compose.uiTooling)
+    androidRuntimeClasspath(libs.compose.ui.tooling)
 }

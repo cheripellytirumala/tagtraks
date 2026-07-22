@@ -11,10 +11,13 @@ import com.example.appartmentapp.presentation.signup.SignupScreen
 import com.example.appartmentapp.presentation.signup.SignupViewModel
 import com.example.appartmentapp.presentation.forgotpassword.ForgotPasswordScreen
 import com.example.appartmentapp.presentation.forgotpassword.ForgotPasswordViewModel
+import com.example.appartmentapp.presentation.location.LocationScreen
+import com.example.appartmentapp.presentation.location.LocationViewModel
+import com.example.appartmentapp.presentation.location.provideLocationService
 import com.example.appartmentapp.presentation.NoBrokerTheme
 
 enum class Screen {
-    Login, Signup, Dashboard, ForgotPassword
+    Login, Signup, Dashboard, ForgotPassword, Location
 }
 
 @Composable
@@ -68,7 +71,17 @@ fun App() {
                 }
                 DashboardScreen(
                     viewModel = dashboardViewModel,
-                    onLogout = { currentScreen = Screen.Login }
+                    onLogout = { currentScreen = Screen.Login },
+                    onNavigateToLocation = { currentScreen = Screen.Location }
+                )
+            }
+            Screen.Location -> {
+                val locationViewModel: LocationViewModel = viewModel {
+                    LocationViewModel(provideLocationService())
+                }
+                LocationScreen(
+                    viewModel = locationViewModel,
+                    onNavigateBack = { currentScreen = Screen.Dashboard }
                 )
             }
         }

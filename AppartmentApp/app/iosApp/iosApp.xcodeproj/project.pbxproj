@@ -6,8 +6,31 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4467E5672FCEADFB00815CB8 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 4467E5662FCEADFB00815CB8 /* GoogleMaps */; };
+		4467E56A2FCEAE0C00815CB8 /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = 4467E5692FCEAE0C00815CB8 /* GooglePlaces */; };
+		4467E56C2FCEAE0C00815CB8 /* GooglePlacesSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4467E56B2FCEAE0C00815CB8 /* GooglePlacesSwift */; };
+		5DB5C53B5ACF413AFF66DD45 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4FBB537183D1B65131BCAB /* Pods_iosApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4467E5702FCEAF2700815CB8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		03902E75D9AFD5669D039A30 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
+		0C4FBB537183D1B65131BCAB /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		524C219193B56F995425A172 /* AppartmentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppartmentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F30302069BE89A594BF75D76 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -21,17 +44,19 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		2455CC1AFDFD51DE6283265C /* Configuration */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		F95BFE3306AB9C6ABB819E38 /* iosApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				6447C29D2F587CBEE31B8145 /* Exceptions for "iosApp" folder in "iosApp" target */,
 			);
 			path = iosApp;
-			sourceTree = "<group>";
-		};
-		2455CC1AFDFD51DE6283265C /* Configuration */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -41,18 +66,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4467E56A2FCEAE0C00815CB8 /* GooglePlaces in Frameworks */,
+				4467E5672FCEADFB00815CB8 /* GoogleMaps in Frameworks */,
+				4467E56C2FCEAE0C00815CB8 /* GooglePlacesSwift in Frameworks */,
+				5DB5C53B5ACF413AFF66DD45 /* Pods_iosApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		264FB2A88A29B2B9A9F0EBEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C4FBB537183D1B65131BCAB /* Pods_iosApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9BF60E47BE2CFDE24359BE82 = {
 			isa = PBXGroup;
 			children = (
 				2455CC1AFDFD51DE6283265C /* Configuration */,
 				F95BFE3306AB9C6ABB819E38 /* iosApp */,
 				B7CAD1ABFBE6E4EEA953834D /* Products */,
+				FCBB2D7251F7256B941349B5 /* Pods */,
+				264FB2A88A29B2B9A9F0EBEE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +103,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		FCBB2D7251F7256B941349B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F30302069BE89A594BF75D76 /* Pods-iosApp.debug.xcconfig */,
+				03902E75D9AFD5669D039A30 /* Pods-iosApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,10 +119,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 682823E8701DC35F7FDBC7B3 /* Build configuration list for PBXNativeTarget "iosApp" */;
 			buildPhases = (
+				4C23F3A37558C497306AF063 /* [CP] Check Pods Manifest.lock */,
 				FDDCEA8FB2969FFED7E9BE49 /* Compile Kotlin Framework */,
 				FF7A6FC2E91C70543CD3F10C /* Sources */,
 				79DA916A638DAF5F74558E96 /* Frameworks */,
 				697A5446C29B1EF404D45E41 /* Resources */,
+				4467E5702FCEAF2700815CB8 /* Embed Frameworks */,
+				B13D7D3BA6A4EDF6182265E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -84,8 +135,6 @@
 				F95BFE3306AB9C6ABB819E38 /* iosApp */,
 			);
 			name = iosApp;
-			packageProductDependencies = (
-			);
 			productName = iosApp;
 			productReference = 524C219193B56F995425A172 /* AppartmentApp.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +163,10 @@
 			);
 			mainGroup = 9BF60E47BE2CFDE24359BE82;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				4467E5652FCEADFB00815CB8 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+				4467E5682FCEAE0C00815CB8 /* XCRemoteSwiftPackageReference "ios-places-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B7CAD1ABFBE6E4EEA953834D /* Products */;
 			projectDirPath = "";
@@ -135,6 +188,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4C23F3A37558C497306AF063 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iosApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B13D7D3BA6A4EDF6182265E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FDDCEA8FB2969FFED7E9BE49 /* Compile Kotlin Framework */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -152,7 +244,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"YES\" = \"$OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED\" ]; then\n  echo \"Skipping Gradle build task invocation due to OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED environment variable set to \\\"YES\\\"\"\n  exit 0\nfi\n\n# Set JAVA_HOME explicitly for the build process\nexport JAVA_HOME=$(/usr/libexec/java_home -v 17 2>/dev/null || echo \"/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home\")\nexport PATH=\"$JAVA_HOME/bin:$PATH\"\n\ncd \"$SRCROOT/../..\"\n./gradlew :app:shared:embedAndSignAppleFrameworkForXcode\n";
+			shellScript = "if [ \"YES\" = \"$OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED\" ]; then\n  echo \"Skipping Gradle build task invocation due to OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED environment variable set to \\\"YES\\\"\"\n  exit 0\nfi\n\n# Set JAVA_HOME explicitly for the build process\nexport JAVA_HOME=$(/usr/libexec/java_home -v 17 2>/dev/null || echo \"/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home\")\nexport PATH=\"$JAVA_HOME/bin:$PATH\"\n\ncd \"$SRCROOT/../..\"\n./gradlew :app:shared:generateKotlinFramework\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -167,6 +259,35 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		0091AACEBD0296129EBC5714 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03902E75D9AFD5669D039A30 /* Pods-iosApp.release.xcconfig */;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
+				DEVELOPMENT_TEAM = "${TEAM_ID}";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iosApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		20D228FC616CFFC6468CC524 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 2455CC1AFDFD51DE6283265C /* Configuration */;
@@ -292,6 +413,7 @@
 		};
 		DAAE0B0A4A309B40475BDE7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F30302069BE89A594BF75D76 /* Pods-iosApp.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -318,46 +440,9 @@
 			};
 			name = Debug;
 		};
-		0091AACEBD0296129EBC5714 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = arm64;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
-				DEVELOPMENT_TEAM = "${TEAM_ID}";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = iosApp/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A9B2005C9C6FBD8E978661AB /* Build configuration list for PBXProject "iosApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				20D228FC616CFFC6468CC524 /* Debug */,
-				65F18CE5933D8AA96AAFE55B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		682823E8701DC35F7FDBC7B3 /* Build configuration list for PBXNativeTarget "iosApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -367,7 +452,53 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		A9B2005C9C6FBD8E978661AB /* Build configuration list for PBXProject "iosApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20D228FC616CFFC6468CC524 /* Debug */,
+				65F18CE5933D8AA96AAFE55B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4467E5652FCEADFB00815CB8 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-maps-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.14.0;
+			};
+		};
+		4467E5682FCEAE0C00815CB8 /* XCRemoteSwiftPackageReference "ios-places-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-places-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.14.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4467E5662FCEADFB00815CB8 /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4467E5652FCEADFB00815CB8 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMaps;
+		};
+		4467E5692FCEAE0C00815CB8 /* GooglePlaces */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4467E5682FCEAE0C00815CB8 /* XCRemoteSwiftPackageReference "ios-places-sdk" */;
+			productName = GooglePlaces;
+		};
+		4467E56B2FCEAE0C00815CB8 /* GooglePlacesSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4467E5682FCEAE0C00815CB8 /* XCRemoteSwiftPackageReference "ios-places-sdk" */;
+			productName = GooglePlacesSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8E63A5B5AA60B2C2231E731A /* Project object */;
 }
