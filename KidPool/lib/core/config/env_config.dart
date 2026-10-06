@@ -1,0 +1,18 @@
+enum Environment { dev, staging, prod }
+
+class EnvConfig {
+  static Environment environment = Environment.dev;
+
+  static String get baseUrl {
+    switch (environment) {
+      case Environment.dev:
+        return "https://admin.ebounti.com/api/";
+      case Environment.staging:
+        return "https://admin.ebounti.com/api/";
+      case Environment.prod:
+        return "https://admin.ebounti.com/api/";
+    }
+  }
+
+  static bool get isDevelopment => environment == Environment.dev;
+}
